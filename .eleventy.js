@@ -2,6 +2,7 @@ const MONTHS_FR = ["janvier","février","mars","avril","mai","juin","juillet","a
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/admin": "admin" });
+  eleventyConfig.addPassthroughCopy({ "src/images": "images" });
 
   eleventyConfig.addFilter("dateFr", (value) => {
     if (!value) return "";
