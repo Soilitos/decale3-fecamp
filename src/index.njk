@@ -94,15 +94,8 @@ layout: null
   .agenda-body p{color:var(--ink-soft);font-size:.9rem;margin:0;}
   .agenda-empty{color:var(--ink-soft);font-size:.92rem;font-style:italic;}
 
-  .menu-cols{display:grid;grid-template-columns:1fr 1fr;gap:36px;}
-  @media (max-width:760px){ .menu-cols{grid-template-columns:1fr;gap:8px;} }
-  .menu-block{margin-bottom:28px;}
-  .menu-block h3{font-size:.82rem;font-weight:800;text-transform:uppercase;letter-spacing:.08em;color:var(--gold);margin-bottom:12px;}
-  .menu-item{display:flex;align-items:baseline;gap:8px;padding-block:7px;border-bottom:1px dashed var(--line);font-size:.95rem;}
-  .menu-item .name{font-weight:600;}
-  .menu-item .fill{flex:1;border-bottom:1px dotted var(--line);margin-bottom:5px;}
-  .menu-item .price{font-variant-numeric:tabular-nums;font-weight:700;color:var(--ink-soft);white-space:nowrap;}
-  .menu-note{font-size:.82rem;color:var(--ink-soft);margin-top:10px;font-style:italic;}
+  .carte-cta{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:28px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:20px;box-shadow:var(--shadow);}
+  .carte-cta p{margin:0;max-width:440px;color:var(--ink-soft);font-size:.98rem;}
 
   .infos{background:#0f0d0b;color:#f3ecdd;border-radius:24px;padding:38px clamp(20px,4vw,44px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;}
   @media (max-width:760px){ .infos{grid-template-columns:1fr;} }
@@ -226,37 +219,12 @@ layout: null
   <section id="carte">
     <div class="section-head">
       <h2>La carte</h2>
-      <span class="section-tag">Prix indicatifs — carte complète sur place</span>
+      <span class="section-tag">Boissons &amp; nourriture</span>
     </div>
-    <div class="menu-cols">
-      <div>
-        <div class="menu-block">
-          <h3>Sirops maison</h3>
-          <div class="menu-item"><span class="name">Bubble gum</span><span class="fill"></span><span class="price">dès 2,50 €</span></div>
-          <div class="menu-item"><span class="name">Barbe à papa</span><span class="fill"></span><span class="price">dès 2,50 €</span></div>
-          <div class="menu-item"><span class="name">Pop-corn</span><span class="fill"></span><span class="price">dès 2,50 €</span></div>
-          <div class="menu-item"><span class="name">Abricot</span><span class="fill"></span><span class="price">dès 2,50 €</span></div>
-        </div>
-        <div class="menu-block">
-          <h3>Cocktails</h3>
-          <div class="menu-item"><span class="name">Cocktails signature</span><span class="fill"></span><span class="price">dès 6 €</span></div>
-          <div class="menu-item"><span class="name">Bières &amp; vins</span><span class="fill"></span><span class="price">dès 3,50 €</span></div>
-        </div>
-      </div>
-      <div>
-        <div class="menu-block">
-          <h3>À grignoter</h3>
-          <div class="menu-item"><span class="name">Salé</span><span class="fill"></span><span class="price">dès 4 €</span></div>
-          <div class="menu-item"><span class="name">Sucré</span><span class="fill"></span><span class="price">dès 3 €</span></div>
-        </div>
-        <div class="menu-block">
-          <h3>Softs &amp; boissons chaudes</h3>
-          <div class="menu-item"><span class="name">Softs</span><span class="fill"></span><span class="price">dès 2 €</span></div>
-          <div class="menu-item"><span class="name">Café, thé, chocolat chaud</span><span class="fill"></span><span class="price">dès 2 €</span></div>
-        </div>
-      </div>
+    <div class="carte-cta">
+      <p>Sirops maison, cocktails, softs, salé et sucré — la carte est tenue à jour en temps réel, la même que celle affichée en salle.</p>
+      <a class="btn primary" href="https://claude.ai/artifact/Cm7TJ8Ab6hpZEfSQLQjKyD" target="_blank" rel="noopener">Voir la carte</a>
     </div>
-    <p class="menu-note">Tarifs à confirmer — affichés à titre indicatif en attendant la carte définitive.</p>
   </section>
 
   <section id="infos" style="border-top:none;">
