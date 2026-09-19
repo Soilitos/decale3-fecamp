@@ -1,0 +1,47 @@
+backend:
+  name: git-gateway
+  branch: main
+
+publish_mode: simple
+media_folder: "src/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "agenda"
+    label: "Agenda (soirées, quiz, événements)"
+    label_singular: "Événement"
+    folder: "src/content/agenda"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - label: "Type"
+        name: "type"
+        widget: "select"
+        options:
+          - { label: "Soirée à thème", value: "theme" }
+          - { label: "Magic: The Gathering", value: "magic" }
+          - { label: "Quiz night", value: "quiz" }
+          - { label: "Découverte hebdo", value: "decouverte" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Masquer (brouillon)", name: "draft", widget: "boolean", default: false, required: false }
+
+  - name: "nouveautes"
+    label: "Nouveautés"
+    label_singular: "Nouveauté"
+    folder: "src/content/nouveautes"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Date", name: "date", widget: "date", format: "YYYY-MM-DD" }
+      - label: "Étiquette"
+        name: "tag"
+        widget: "select"
+        default: "nouveau"
+        options:
+          - { label: "Nouveau", value: "nouveau" }
+          - { label: "Bientôt", value: "bientot" }
+      - { label: "Description", name: "description", widget: "text" }
+      - { label: "Masquer (brouillon)", name: "draft", widget: "boolean", default: false, required: false }
