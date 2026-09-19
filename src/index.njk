@@ -69,6 +69,7 @@ layout: null
   .news-row{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
   @media (max-width:760px){ .news-row{grid-template-columns:1fr;} }
   .news-card{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:20px;box-shadow:var(--shadow);}
+  .news-img{width:calc(100% + 40px);height:150px;object-fit:cover;display:block;margin:-20px -20px 14px -20px;border-radius:16px 16px 0 0;}
   .news-tag{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent);padding:3px 9px;border-radius:999px;margin-bottom:12px;}
   .news-tag.soon{background:var(--gold);color:#1c1712;}
   .news-card h3{font-size:1.08rem;font-weight:700;margin-bottom:6px;}
@@ -87,6 +88,7 @@ layout: null
   .agenda-item{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px 20px;display:flex;gap:18px;align-items:flex-start;}
   @media (max-width:600px){ .agenda-item{flex-direction:column;gap:8px;} }
   .agenda-date{flex-shrink:0;width:110px;font-weight:800;font-family:'Baloo 2';color:var(--accent);font-size:.95rem;text-transform:capitalize;}
+  .agenda-thumb{flex-shrink:0;width:64px;height:64px;object-fit:cover;border-radius:12px;}
   .agenda-body h3{font-size:1.02rem;font-weight:700;margin-bottom:4px;}
   .agenda-body .type{display:inline-block;font-size:.68rem;font-weight:800;text-transform:uppercase;letter-spacing:.06em;color:var(--gold);margin-bottom:4px;}
   .agenda-body p{color:var(--ink-soft);font-size:.9rem;margin:0;}
@@ -157,6 +159,7 @@ layout: null
     <div class="news-row">
       {% for item in collections.nouveautes %}
       <div class="news-card">
+        {% if item.data.image %}<img class="news-img" src="{{ item.data.image }}" alt="{{ item.data.title }}">{% endif %}
         <span class="news-tag{% if item.data.tag == 'bientot' %} soon{% endif %}">{% if item.data.tag == 'bientot' %}Bientôt{% else %}Nouveau{% endif %}</span>
         <h3>{{ item.data.title }}</h3>
         <p>{{ item.data.description }}</p>
@@ -177,6 +180,7 @@ layout: null
       {% for item in collections.agenda %}
       <div class="agenda-item">
         <div class="agenda-date">{{ item.data.date | dateFr }}</div>
+        {% if item.data.image %}<img class="agenda-thumb" src="{{ item.data.image }}" alt="{{ item.data.title }}">{% endif %}
         <div class="agenda-body">
           <span class="type">{{ typeLabels[item.data.type] or item.data.type }}</span>
           <h3>{{ item.data.title }}</h3>
