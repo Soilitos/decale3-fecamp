@@ -1,6 +1,9 @@
 backend:
-  name: git-gateway
+  name: github
+  repo: Soilitos/decale3-fecamp
   branch: main
+  base_url: https://api.netlify.com
+  auth_endpoint: auth
 
 publish_mode: simple
 media_folder: "src/images/uploads"
