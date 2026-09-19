@@ -28,6 +28,7 @@ collections:
           - { label: "Quiz night", value: "quiz" }
           - { label: "Découverte hebdo", value: "decouverte" }
       - { label: "Description", name: "description", widget: "text" }
+      - { label: "Photo (optionnelle)", name: "image", widget: "image", required: false }
       - { label: "Masquer (brouillon)", name: "draft", widget: "boolean", default: false, required: false }
 
   - name: "nouveautes"
@@ -47,4 +48,5 @@ collections:
           - { label: "Nouveau", value: "nouveau" }
           - { label: "Bientôt", value: "bientot" }
       - { label: "Description", name: "description", widget: "text" }
+      - { label: "Photo (optionnelle)", name: "image", widget: "image", required: false }
       - { label: "Masquer (brouillon)", name: "draft", widget: "boolean", default: false, required: false }
