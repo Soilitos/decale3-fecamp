@@ -2,7 +2,7 @@ backend:
   name: github
   repo: Soilitos/decale3-fecamp
   branch: main
-  base_url: https://api.netlify.com
+  base_url: https://decale3-fecamp.netlify.app
   auth_endpoint: auth
 
 publish_mode: simple
